@@ -1,0 +1,385 @@
+html {
+    font-family: 'Open Sans';
+    background-color: #f8f8f8;
+    overflow-x: hidden;
+    padding: 0;
+
+}
+
+body {
+    background-color: #f8f8f8;
+}
+a.btn-primary, button.btn-primary {
+    background: #6e6eff;
+    border: none;
+    transition: all 0.5s;
+}
+a.btn-primary:hover, button.btn-primary:hover {
+    background: #5050ff;
+} 
+
+a.btn-danger, button.btn-danger, a.btn-warning, button.btn-warning {
+    border: none;
+    transition: all 0.5s;
+}
+
+/*Top menu*/
+.small-top-menu {
+    font-family: 'Open Sans';
+    padding: 5px 15px;
+    background: #f8f8f8;
+}
+.top-menu-container {
+    font-family: 'Open Sans';
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+nav.navbar-default {
+    background-color: white;
+    border: 1px solid #ccc;
+    border-left: none;
+    border-right: none;
+    border-radius: 0px;
+    margin: 0;
+}
+a.navbar-brand {
+    margin-right: 100px;
+}
+
+form#top-menu-search-form input {
+    min-width: 50vw;
+}
+form#top-menu-search-form input:focus {
+    outline: none;
+    box-shadow: 1px 1px 10px rgba(255, 255, 255, 0);
+}
+form#top-menu-search-form div.input-group-addon {
+    background: #6e6eff;
+    color: white;
+    border: none;
+}
+button#top-menu-search-button {
+    background: rgba(255, 0, 0, 0);
+    border: none;
+    font-size: 16px;
+}
+/*Top menu*/
+
+ol.breadcrumb {
+    font-family: 'Open Sans';
+    background: rgba(255, 255, 255, 0);
+}
+
+
+            /*Content*/
+.content {
+    min-height: 80vh;
+    background: #f8f8f8;
+    padding-top: 25px;
+}
+
+
+/*Left menu*/
+
+
+
+.content .col-left-menu {
+    font-family: 'Open Sans';
+    padding: 0 25px 0 0;
+    margin-bottom: 25px;
+}
+.content .col-left-menu .left-menu {
+    padding: 0 10px 20px 10px;
+    height: auto;
+    background: white;
+    border: 1px solid #ccc;
+    border-left: none;
+    border-radius: 3px;
+}
+
+
+/*Left menu*/
+
+/*Main block*/
+
+.content .col-main {
+    padding: 0;
+}
+
+.main {
+    font-family: 'Open Sans';
+    padding: 0 25px 25px 25px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    border-right: none;
+    background: white;
+    margin-bottom: 25px;
+}
+
+
+.col-good-container {
+    padding: 25px;
+}
+.good-container {
+    border: 1px solid rgb(235, 235, 235);
+    background: white;
+    overflow: hidden;
+    padding: 10px;
+    border-radius: 3px;
+    min-height: 325px;
+    height: auto;
+    transition: all 0.3s;
+}
+
+.good-container:hover {
+    border: 1px solid #ccc;
+    box-shadow: 1px 1px 5px #c4c4c4;
+}
+.stock {
+    font-family: 'Arial';
+    position: absolute;
+    left: 10px;
+    font-size: 22px;
+}
+
+.good-img {
+    overflow: hidden;
+    margin-bottom: 15px;
+}
+.good-img img {
+    width: 100%;
+    min-height: 100%;
+}
+
+.good-footer {
+    overflow: hidden;
+}
+span.short-name, span.good-brand {
+    color: grey;
+    font-size: 12px;
+}
+span.new-price, span.old-price {
+    font-size: 18px;
+    color: black;
+}
+span.old-price {
+    text-decoration: line-through;
+}
+
+
+/*Main*/
+            /*Content*/
+
+/*Footer*/
+
+footer {
+    font-family: 'Open Sans';
+    border-top: 1px solid #ccc;
+    padding: 10px;
+}
+footer span {
+    font-size: 14px;
+    font-weight: 600;
+    color: #000000;
+}
+footer a.brand {
+    font-size: 32px;
+    margin-right: 15px;
+    transition: all 0.5s;
+}
+footer span.card {
+    color: #4a4a4a;
+    font-size: 32px;
+}
+footer span.card img {
+    max-width: 50px;
+    max-height: 40px;
+}
+footer span.description {
+    font-family: 'Open Sans';
+    font-weight: 400;
+    font-size: 14px;
+    color: grey;
+}
+footer span.help {
+    padding-bottom: 110px;
+}
+footer ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+/*Footer*/
+
+
+/*Головна сторінка*/
+
+
+
+a.main-page-a, a.main-page-a:hover {
+    color: black;
+}
+
+a.main-page-a:hover .mask {
+    background: rgba(0, 0, 0, 0.15);
+    color: black;
+}
+
+.banner {
+    font-family: 'Open Sans';
+    position: absolute;
+    padding: 10px;
+    height: 500px;
+}
+.banner-action {
+    height: auto;
+}
+
+.wrapper {
+    background-size: 100%;
+    padding: 10px;
+    position: relative;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    
+}
+
+.mask {
+    height: 100%;
+    width: 100%;
+    background: rgba(0, 0, 0, 0);
+    position: absolute;
+    z-index: 0;
+    transition: all 0.5s;
+}
+
+
+.img {
+    transition: all 0.5s;
+    position: relative;
+    max-width: 100%;
+    max-height: 400px;
+    overflow: hidden;
+    z-index: 100;
+    float: left;
+    border: 1px solid rgba(204, 204, 204, 0.1);
+}
+
+.img-action {
+    max-height: 600px;
+}
+.img img {
+    width: 100%;
+}
+
+.wrapper .description {
+    top: -100px;
+    position: relative;
+    float: left;
+    background: rgb(255, 255, 255);
+    width: 90%;
+    height: 11%;
+    margin-left: 5%;
+    text-align: center;
+    font-size: 24px;
+    line-height: 48px;
+    z-index: 9999;
+}
+
+
+/*Головна сторінка*/
+
+
+
+
+/*Сторінка товара*/
+
+.product-img img {
+    max-width: 100%;
+}
+
+form.product-form select:focus{
+    outline: none;
+    box-shadow: 1px 1px 10px rgba(255, 255, 255, 0);
+}
+
+.price {
+    padding: 40px;
+}
+span.price {
+    font-size: 32px;
+}
+
+/*Сторінка товара*/
+
+
+/*Корзина*/
+
+img.media-object {
+    width: 80px;
+}
+
+.to-trash {
+    font-size: 24px;
+}
+.to-trash p {
+    font-size: 14px;
+}
+.card-send .right {
+    float: right;
+}
+
+form#confirmation-form input, form#confirmation-form select {
+    outline: none;
+    box-shadow: 1px 1px 10px rgba(255, 255, 255, 0);
+}
+
+.nova-poshta-img {
+    padding: 25px;
+}
+img.np {
+    max-width: 70%;
+}
+
+/*Корзина*/
+
+/*Профіль*/
+
+span.discount {
+    font-size: 32px;
+}
+.shipment-img img {
+    max-width: 200px;
+}
+/*Профіль*/
+
+/*Admin panel*/
+
+.admin-toolbar {
+    background: #3c3c3c;
+    color: white;
+}
+.admin-toolbar a {
+    color: white;
+}
+.admin-toolbar a:hover {
+    color: antiquewhite;
+}
+
+/*Admin panel*/
+
+@media screen and (max-width: 1499px){
+    .good-img {
+        height: 150px;
+    }
+}
+
+@media screen and (min-width: 1500px){
+    .good-img {
+        height: 250px;
+        overflow: hidden;
+        margin-bottom: 15px;
+    }
+}

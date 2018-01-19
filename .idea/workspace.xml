@@ -1,7 +1,92 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b89f4b5e-cde6-46d0-8ca6-6a8d3ba08a33" name="Default" comment="" />
+    <list default="true" id="b89f4b5e-cde6-46d0-8ca6-6a8d3ba08a33" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/public_html/.httaccess" afterPath="$PROJECT_DIR$/public_html/.httaccess" />
+      <change beforePath="$PROJECT_DIR$/public_html/components/Db.php" afterPath="$PROJECT_DIR$/public_html/components/Db.php" />
+      <change beforePath="$PROJECT_DIR$/public_html/components/DocxConversion.php" afterPath="$PROJECT_DIR$/public_html/components/DocxConversion.php" />
+      <change beforePath="$PROJECT_DIR$/public_html/components/Plagiat.php" afterPath="$PROJECT_DIR$/public_html/components/Plagiat.php" />
+      <change beforePath="$PROJECT_DIR$/public_html/controllers/IndexController.php" afterPath="$PROJECT_DIR$/public_html/controllers/IndexController.php" />
+      <change beforePath="$PROJECT_DIR$/public_html/models/Shingle.php" afterPath="$PROJECT_DIR$/public_html/models/Shingle.php" />
+      <change beforePath="$PROJECT_DIR$/public_html/template/css/admin.css" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/public_html/template/css/bootstrap-theme.css" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/public_html/template/css/bootstrap.css" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/public_html/template/css/card.css" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/public_html/template/css/font-awesome.css" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/public_html/template/css/register.css" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/public_html/template/css/style.css" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/public_html/template/fonts/FontAwesome.otf" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/public_html/template/fonts/fontawesome-webfont.eot" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/public_html/template/fonts/fontawesome-webfont.svg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/public_html/template/fonts/fontawesome-webfont.ttf" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/public_html/template/fonts/fontawesome-webfont.woff" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/public_html/template/fonts/fontawesome-webfont.woff2" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/public_html/template/fonts/glyphicons-halflings-regular.eot" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/public_html/template/fonts/glyphicons-halflings-regular.svg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/public_html/template/fonts/glyphicons-halflings-regular.ttf" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/public_html/template/fonts/glyphicons-halflings-regular.woff" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/public_html/template/fonts/glyphicons-halflings-regular.woff2" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/public_html/template/img/action.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/public_html/template/img/action.psd" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/public_html/template/img/catalog/man_jacket.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/public_html/template/img/catalog/man_jeans.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/public_html/template/img/catalog/man_pullower.jpeg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/public_html/template/img/catalog/man_t_shirt.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/public_html/template/img/catalog/woman_blouses.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/public_html/template/img/catalog/woman_jeans.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/public_html/template/img/catalog/woman_platt.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/public_html/template/img/catalog/woman_skirts.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/public_html/template/img/catalog/woman_tshirts.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/public_html/template/img/favicon.ico" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/public_html/template/img/master card.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/public_html/template/img/mount.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/public_html/template/img/mount1.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/public_html/template/img/nova pshta.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/public_html/template/img/privat24.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/public_html/template/img/shipment/complete.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/public_html/template/img/shipment/complete.psd" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/public_html/template/img/shipment/decline.psd" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/public_html/template/img/shipment/failed.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/public_html/template/img/shipment/in_process.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/public_html/template/img/shipment/in_process.psd" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/public_html/template/img/sm-cat-d.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/public_html/template/img/sm-cat-m.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/public_html/template/img/sm-cat-z.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/public_html/template/img/visa.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/public_html/template/img/w-1.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/public_html/template/img/w-2.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/public_html/template/js/bootstrap.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/public_html/template/js/bootstrap.min.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/public_html/template/js/npm.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/public_html/template/js/slick/slick-1.6.0/.gitignore" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/public_html/template/js/slick/slick-1.6.0/CONTRIBUTING.markdown" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/public_html/template/js/slick/slick-1.6.0/ISSUE_TEMPLATE.md" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/public_html/template/js/slick/slick-1.6.0/LICENSE" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/public_html/template/js/slick/slick-1.6.0/Makefile" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/public_html/template/js/slick/slick-1.6.0/README.markdown" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/public_html/template/js/slick/slick-1.6.0/bower.json" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/public_html/template/js/slick/slick-1.6.0/component.json" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/public_html/template/js/slick/slick-1.6.0/index.html" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/public_html/template/js/slick/slick-1.6.0/package.json" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/public_html/template/js/slick/slick-1.6.0/slick.jquery.json" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/public_html/template/js/slick/slick-1.6.0/slick/ajax-loader.gif" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/public_html/template/js/slick/slick-1.6.0/slick/config.rb" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/public_html/template/js/slick/slick-1.6.0/slick/fonts/slick.eot" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/public_html/template/js/slick/slick-1.6.0/slick/fonts/slick.svg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/public_html/template/js/slick/slick-1.6.0/slick/fonts/slick.ttf" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/public_html/template/js/slick/slick-1.6.0/slick/fonts/slick.woff" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/public_html/template/js/slick/slick-1.6.0/slick/slick-theme.css" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/public_html/template/js/slick/slick-1.6.0/slick/slick-theme.less" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/public_html/template/js/slick/slick-1.6.0/slick/slick-theme.scss" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/public_html/template/js/slick/slick-1.6.0/slick/slick.css" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/public_html/template/js/slick/slick-1.6.0/slick/slick.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/public_html/template/js/slick/slick-1.6.0/slick/slick.less" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/public_html/template/js/slick/slick-1.6.0/slick/slick.min.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/public_html/template/js/slick/slick-1.6.0/slick/slick.scss" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/public_html/uploads/PRAK.doc" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/public_html/views/main/main.php" afterPath="$PROJECT_DIR$/public_html/views/main/main.php" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -11,36 +96,45 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="IndexController.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/public_html/controllers/IndexController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="666">
+              <caret line="37" column="0" lean-forward="false" selection-start-line="37" selection-start-column="0" selection-end-line="37" selection-end-column="0" />
+              <folding>
+                <element signature="n#uploadFile#0;n#IndexController#0;n#!!top" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Shingle.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/public_html/models/Shingle.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1033">
+              <caret line="87" column="25" lean-forward="false" selection-start-line="87" selection-start-column="25" selection-end-line="87" selection-end-column="25" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="main.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public_html/views/main/main.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="396">
-              <caret line="66" column="45" lean-forward="false" selection-start-line="66" selection-start-column="45" selection-end-line="66" selection-end-column="45" />
+            <state relative-caret-position="1235">
+              <caret line="69" column="23" lean-forward="false" selection-start-line="69" selection-start-column="23" selection-end-line="69" selection-end-column="23" />
               <folding>
-                <element signature="n#style#0;n#input#1;n#form#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <marker date="1516099160845" expanded="true" signature="3565:3597" ph="..." />
+                <marker date="1516359059446" expanded="true" signature="3565:3597" ph="..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="IndexController.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/public_html/controllers/IndexController.php">
+      <file leaf-file-name="Plagiat.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/public_html/components/Plagiat.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="169">
-              <caret line="13" column="8" lean-forward="false" selection-start-line="13" selection-start-column="8" selection-end-line="13" selection-end-column="8" />
-              <folding>
-                <element signature="n#readWord#0;n#IndexController#0;n#!!top" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="DocxConversion.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public_html/components/DocxConversion.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="275">
-              <caret line="17" column="0" lean-forward="false" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+            <state relative-caret-position="475">
+              <caret line="67" column="37" lean-forward="false" selection-start-line="67" selection-start-column="37" selection-end-line="67" selection-end-column="37" />
               <folding />
             </state>
           </provider>
@@ -53,7 +147,11 @@
       <find>get_shingle</find>
       <find>check_it</find>
       <find>Sorry, your file is too large</find>
+      <find>echo</find>
     </findStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -62,14 +160,14 @@
         <option value="$PROJECT_DIR$/public_html/components/Router.php" />
         <option value="$PROJECT_DIR$/public_html/index.php" />
         <option value="$PROJECT_DIR$/public_html/index2.php" />
-        <option value="$PROJECT_DIR$/public_html/components/Plagiat.php" />
-        <option value="$PROJECT_DIR$/public_html/components/Db.php" />
         <option value="$PROJECT_DIR$/public_html/config/db_params.php" />
-        <option value="$PROJECT_DIR$/public_html/models/Shingle.php" />
-        <option value="$PROJECT_DIR$/public_html/views/main/main.php" />
         <option value="$PROJECT_DIR$/public_html/components/class.filetotext.php" />
         <option value="$PROJECT_DIR$/public_html/.httaccess" />
+        <option value="$PROJECT_DIR$/public_html/components/Db.php" />
+        <option value="$PROJECT_DIR$/public_html/models/Shingle.php" />
         <option value="$PROJECT_DIR$/public_html/components/DocxConversion.php" />
+        <option value="$PROJECT_DIR$/public_html/components/Plagiat.php" />
+        <option value="$PROJECT_DIR$/public_html/views/main/main.php" />
         <option value="$PROJECT_DIR$/public_html/controllers/IndexController.php" />
       </list>
     </option>
@@ -81,12 +179,13 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
-  <component name="ProjectFrameBounds" extendedState="7">
-    <option name="x" value="65" />
-    <option name="y" value="24" />
-    <option name="width" value="1855" />
-    <option name="height" value="1056" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="2269" />
+    <option name="y" value="142" />
+    <option name="width" value="1391" />
+    <option name="height" value="784" />
   </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1">
       <flattenPackages />
@@ -102,8 +201,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="Scratches" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -120,7 +219,13 @@
               <item name="project.loc" type="b2602c69:ProjectViewProjectNode" />
               <item name="project.loc" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="public_html" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="uploads" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="components" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="project.loc" type="b2602c69:ProjectViewProjectNode" />
+              <item name="project.loc" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="public_html" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="models" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
           </expand>
           <select />
@@ -131,7 +236,7 @@
   <component name="PropertiesComponent">
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$USER_HOME$/Sites/PORTALS/adultinc" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Sites/VodafonePortal" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -160,24 +265,27 @@
       <updated>1516092131339</updated>
       <workItem from="1516092133721" duration="6368000" />
       <workItem from="1516098542397" duration="15416000" />
+      <workItem from="1516174739037" duration="8324000" />
+      <workItem from="1516187518800" duration="42000" />
+      <workItem from="1516203906110" duration="2636000" />
+      <workItem from="1516261136606" duration="1784000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="21784000" />
+    <option name="totallyTimeSpent" value="34570000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="65" y="-4" width="1855" height="1084" extended-state="7" />
+    <frame x="1985" y="-4" width="1855" height="1084" extended-state="6" />
     <layout>
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25262576" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.27086788" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3291536" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22198953" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -185,6 +293,7 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
@@ -200,13 +309,176 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/public_html/controllers/IndexController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="918">
+          <caret line="51" column="43" lean-forward="false" selection-start-line="51" selection-start-column="43" selection-end-line="51" selection-end-column="43" />
+          <folding>
+            <element signature="n#uploadFile#0;n#IndexController#0;n#!!top" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public_html/components/Db.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="288">
+          <caret line="16" column="56" lean-forward="false" selection-start-line="16" selection-start-column="56" selection-end-line="16" selection-end-column="56" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public_html/models/Shingle.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="792">
+          <caret line="44" column="18" lean-forward="false" selection-start-line="44" selection-start-column="18" selection-end-line="44" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public_html/controllers/IndexController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="20" column="30" lean-forward="false" selection-start-line="20" selection-start-column="30" selection-end-line="20" selection-end-column="30" />
+          <folding>
+            <element signature="n#uploadFile#0;n#IndexController#0;n#!!top" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public_html/models/Shingle.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="288">
+          <caret line="16" column="51" lean-forward="false" selection-start-line="16" selection-start-column="51" selection-end-line="16" selection-end-column="51" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public_html/components/Db.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="15" column="20" lean-forward="false" selection-start-line="15" selection-start-column="20" selection-end-line="15" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public_html/views/main/main.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1188">
+          <caret line="66" column="45" lean-forward="false" selection-start-line="66" selection-start-column="45" selection-end-line="66" selection-end-column="45" />
+          <folding>
+            <marker date="1516359059446" expanded="true" signature="3565:3597" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public_html/controllers/IndexController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="20" column="30" lean-forward="false" selection-start-line="20" selection-start-column="29" selection-end-line="20" selection-end-column="30" />
+          <folding>
+            <element signature="n#uploadFile#0;n#IndexController#0;n#!!top" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public_html/components/Plagiat.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="234">
+          <caret line="13" column="0" lean-forward="false" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public_html/models/Shingle.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="288">
+          <caret line="16" column="48" lean-forward="false" selection-start-line="16" selection-start-column="48" selection-end-line="16" selection-end-column="48" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public_html/views/main/main.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1188">
+          <caret line="66" column="45" lean-forward="false" selection-start-line="66" selection-start-column="45" selection-end-line="66" selection-end-column="45" />
+          <folding>
+            <marker date="1516359059446" expanded="true" signature="3565:3597" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public_html/components/DocxConversion.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="17" column="0" lean-forward="false" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public_html/controllers/IndexController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="900">
+          <caret line="50" column="0" lean-forward="false" selection-start-line="50" selection-start-column="0" selection-end-line="50" selection-end-column="0" />
+          <folding>
+            <element signature="n#uploadFile#0;n#IndexController#0;n#!!top" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public_html/views/main/main.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <marker date="1516359059446" expanded="true" signature="3565:3597" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public_html/controllers/IndexController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="900">
+          <caret line="50" column="0" lean-forward="true" selection-start-line="50" selection-start-column="0" selection-end-line="50" selection-end-column="0" />
+          <folding>
+            <element signature="n#uploadFile#0;n#IndexController#0;n#!!top" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public_html/components/DocxConversion.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="17" column="0" lean-forward="false" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public_html/views/main/main.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1188">
+          <caret line="66" column="45" lean-forward="false" selection-start-line="66" selection-start-column="45" selection-end-line="66" selection-end-column="45" />
+          <folding>
+            <marker date="1516359059446" expanded="true" signature="3565:3597" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public_html/controllers/IndexController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="234">
+          <caret line="13" column="8" lean-forward="false" selection-start-line="13" selection-start-column="8" selection-end-line="13" selection-end-column="8" />
+          <folding>
+            <element signature="n#uploadFile#0;n#IndexController#0;n#!!top" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/public_html/views/main/main.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1152">
           <caret line="64" column="68" lean-forward="false" selection-start-line="64" selection-start-column="68" selection-end-line="64" selection-end-column="68" />
           <folding>
-            <element signature="n#style#0;n#input#1;n#form#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <marker date="1516099160845" expanded="true" signature="3565:3597" ph="..." />
+            <marker date="1516359059446" expanded="true" signature="3565:3597" ph="..." />
           </folding>
         </state>
       </provider>
@@ -215,10 +487,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="180">
           <caret line="10" column="20" lean-forward="false" selection-start-line="10" selection-start-column="20" selection-end-line="10" selection-end-column="20" />
-          <folding>
-            <marker date="1516097629238" expanded="true" signature="133:147" ph="SELECT name users" />
-            <marker date="1516097629238" expanded="true" signature="133:155" ph="SELECT * FRO... shingles" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -227,7 +496,7 @@
         <state relative-caret-position="288">
           <caret line="16" column="52" lean-forward="true" selection-start-line="16" selection-start-column="52" selection-end-line="16" selection-end-column="52" />
           <folding>
-            <element signature="n#readWord#0;n#IndexController#0;n#!!top" expanded="false" />
+            <element signature="n#uploadFile#0;n#IndexController#0;n#!!top" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -236,15 +505,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="104">
           <caret line="34" column="74" lean-forward="false" selection-start-line="34" selection-start-column="74" selection-end-line="34" selection-end-column="74" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public_html/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="284">
-          <caret line="19" column="45" lean-forward="false" selection-start-line="19" selection-start-column="45" selection-end-line="19" selection-end-column="45" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -255,49 +515,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public_html/index2.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="104">
-          <caret line="70" column="24" lean-forward="false" selection-start-line="70" selection-start-column="13" selection-end-line="70" selection-end-column="24" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public_html/config/routes.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="54">
           <caret line="3" column="4" lean-forward="false" selection-start-line="3" selection-start-column="4" selection-end-line="3" selection-end-column="4" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public_html/components/Plagiat.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="67" column="44" lean-forward="false" selection-start-line="67" selection-start-column="44" selection-end-line="67" selection-end-column="44" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public_html/models/User.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="432">
-          <caret line="28" column="5" lean-forward="false" selection-start-line="14" selection-start-column="4" selection-end-line="28" selection-end-column="5" />
-          <folding>
-            <marker date="1516092614566" expanded="true" signature="377:437" ph="SELECT * FRO... user" />
-            <marker date="1516092614566" expanded="true" signature="771:806" ph="SELECT * FRO... user" />
-            <marker date="1516092614566" expanded="true" signature="1168:1230" ph="SELECT * FRO... orders" />
-            <marker date="1516092614566" expanded="true" signature="2640:2681" ph="SELECT * FRO... user" />
-            <marker date="1516092614566" expanded="true" signature="3194:3289" ph="INSERT INTO user... " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public_html/components/Db.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="15" column="20" lean-forward="true" selection-start-line="15" selection-start-column="20" selection-end-line="15" selection-end-column="20" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -305,79 +526,90 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="36">
           <caret line="2" column="13" lean-forward="false" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public_html/components/class.filetotext.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="18">
-          <caret line="1" column="0" lean-forward="true" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public_html/test_kit.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public_html/uploads/PRAK.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="14" column="58" lean-forward="true" selection-start-line="14" selection-start-column="58" selection-end-line="14" selection-end-column="58" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public_html/models/Shingle.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="10" column="20" lean-forward="false" selection-start-line="10" selection-start-column="20" selection-end-line="10" selection-end-column="20" />
-          <folding>
-            <marker date="1516097629238" expanded="true" signature="133:147" ph="SELECT name users" />
-            <marker date="1516097629238" expanded="true" signature="133:155" ph="SELECT * FRO... shingles" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public_html/views/main/main.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="396">
-          <caret line="66" column="45" lean-forward="false" selection-start-line="66" selection-start-column="45" selection-end-line="66" selection-end-column="45" />
-          <folding>
-            <element signature="n#style#0;n#input#1;n#form#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <marker date="1516099160845" expanded="true" signature="3565:3597" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/public_html/components/class.filetotext.php" />
+    <entry file="file://$PROJECT_DIR$/public_html/test_kit.txt" />
+    <entry file="file://$PROJECT_DIR$/public_html/uploads/PRAK.txt" />
     <entry file="file://$PROJECT_DIR$/public_html/.httaccess">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="144">
           <caret line="8" column="28" lean-forward="false" selection-start-line="8" selection-start-column="28" selection-end-line="8" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public_html/models/User.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1847">
+          <caret line="11" column="16" lean-forward="false" selection-start-line="11" selection-start-column="16" selection-end-line="11" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public_html/index2.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-133">
+          <caret line="46" column="7" lean-forward="true" selection-start-line="46" selection-start-column="7" selection-end-line="46" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public_html/components/Db.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="288">
+          <caret line="16" column="56" lean-forward="false" selection-start-line="16" selection-start-column="56" selection-end-line="16" selection-end-column="56" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public_html/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="342">
+          <caret line="19" column="45" lean-forward="false" selection-start-line="19" selection-start-column="45" selection-end-line="19" selection-end-column="45" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/public_html/components/DocxConversion.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="275">
-          <caret line="17" column="0" lean-forward="false" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+        <state relative-caret-position="-414">
+          <caret line="7" column="60" lean-forward="false" selection-start-line="7" selection-start-column="60" selection-end-line="7" selection-end-column="60" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public_html/components/Plagiat.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="475">
+          <caret line="67" column="37" lean-forward="false" selection-start-line="67" selection-start-column="37" selection-end-line="67" selection-end-column="37" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public_html/views/main/main.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1235">
+          <caret line="69" column="23" lean-forward="false" selection-start-line="69" selection-start-column="23" selection-end-line="69" selection-end-column="23" />
+          <folding>
+            <marker date="1516359059446" expanded="true" signature="3565:3597" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/public_html/controllers/IndexController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="169">
-          <caret line="13" column="8" lean-forward="false" selection-start-line="13" selection-start-column="8" selection-end-line="13" selection-end-column="8" />
+        <state relative-caret-position="666">
+          <caret line="37" column="0" lean-forward="false" selection-start-line="37" selection-start-column="0" selection-end-line="37" selection-end-column="0" />
           <folding>
-            <element signature="n#readWord#0;n#IndexController#0;n#!!top" expanded="false" />
+            <element signature="n#uploadFile#0;n#IndexController#0;n#!!top" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public_html/models/Shingle.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1033">
+          <caret line="87" column="25" lean-forward="false" selection-start-line="87" selection-start-column="25" selection-end-line="87" selection-end-column="25" />
+          <folding />
         </state>
       </provider>
     </entry>

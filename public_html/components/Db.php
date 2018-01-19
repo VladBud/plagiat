@@ -11,7 +11,11 @@ class Db {
             PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
             PDO::ATTR_EMULATE_PREPARES   => false,
         ];
+        try {
         $pdo = new PDO($dsn, $params['user'], $params['password'], $opt);
+        } catch (PDOException $e) {
+            die('Невдале підключення: ' . $e->getMessage());
+        }
 
         return $pdo;
     }

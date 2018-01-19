@@ -6,7 +6,7 @@ class Plagiat
     private $second_shingles;
 
 
-    public function __construct($first, $second)
+    public function __construct($first = NULL, $second = NULL)
     {
         $this->first_shingles = $first;
         $this->second_shingles = $second;
@@ -18,7 +18,7 @@ class Plagiat
 
     }
 
-    private function get_shingle($text,$n=3) {
+    public function get_shingle($text,$n=3) {
         $shingles = array();
         $text = $this->clean_text($text);
         $elements = explode(" ",$text);
@@ -65,7 +65,7 @@ class Plagiat
             $merge = array_unique(array_merge($this->first_shingles,$this->second_shingles));
 
             $diff = (count($intersect)/count($merge))/0.01;
-            $result = "Відсоток унікальності - ".round($diff, 2)."%<br />";
+            $result = round($diff, 2);
 
             return $result;
         }

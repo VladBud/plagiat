@@ -5,7 +5,7 @@ class DocxConversion
     private $filename;
     private $name;
 
-    public function __construct($filePath, $fileName) {
+    public function __construct($filePath, $fileName = false) {
         $this->filename = $filePath;
         $this->name = $fileName;
     }
@@ -14,7 +14,7 @@ class DocxConversion
         print_r($this->name);
         $this->name = explode('.',$this->name);
         $this->name = 'uploads/' . $this->name[0] . '.docx' ;
-        print_r($this->name);
+        //print_r($this->name);
 
      //   return $outtext;
     }
@@ -37,7 +37,7 @@ class DocxConversion
             $content .= zip_entry_read($zip_entry, zip_entry_filesize($zip_entry));
 
             zip_entry_close($zip_entry);
-        }// end while
+        }
 
         zip_close($zip);
 

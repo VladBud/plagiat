@@ -67,7 +67,7 @@
             <input type="submit" name="submit" value="Проверить" style="display: block; margin: 0 auto; font-weight: bold; width: 50%;" />
         </form>
         <p>
-            <?= $finish ?? '' ?>
+            <?= isset($finish) ? $finish:'' ?>
 </div>
 
 </body>

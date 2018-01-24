@@ -1,5 +1,7 @@
 <?php
 
+namespace components;
+
 class Plagiat
 {
     private $first_shingles;

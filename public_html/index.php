@@ -1,31 +1,32 @@
 <?php
 
-                                        //FRONT CONTROLLER
+use app\Router;
 
-    //Загальні налаштування
-
-//1. На час розробки проекту включаємо показ помилок
-
-ini_set('display_errors', 1);
+//1. General settings
+  
+/**
+ * Show exceptions in dev environment
+ */
+ini_set('display_errors',1);
 error_reporting(E_ALL);
 
-//2. Включаємо сессію для всіх сторінок
+//2. System file include
 
-session_start();
+define('ROOT', str_replace('\\','/', dirname(__FILE__)));
 
-//3. Задаємо константою шлях
+/**
+ * Helpers functions
+*/
+require_once ROOT . '/core/helpers.php';
 
-$dirname = str_replace('\\', '/', dirname(__FILE__));
-define('ROOT', $dirname);
-define('SITE_NAME', 'Перевірка на антиплагіат');
-define('ERROR404', ROOT . '/views/404/404.php');
-define('MAX_FILE_SIZE', 30000);
-//Підключення файлів системи
-require_once(ROOT . '/components/Router.php');
+/**
+ * PSR-4 classes autoload
+*/
+require ROOT . '/vendor/autoload.php';
 
-//З'єднання з БД
+//3. Connect to database
 require_once(ROOT . '/components/Db.php');
 
-//Виклик роутера
+//4. Start routing
 $router = new Router;
-$router->start();
+$router->run();

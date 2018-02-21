@@ -12,18 +12,18 @@ class IndexController extends Controller
 
     public function indexAction()
     {
-
         if(isset($_POST["submit"])) {
             $file = $this->uploadFile();
-            print_r('FILE IS: ' . $file);
 
             $allFiles =  Shingle::selectAllFiles();
-            $singleFile = Shingle::selectFile($file);
-            print_r( $singleFile);
+            if (!isset($file['text_id']))
+                return $this->render('main/main.php', ['answer' => $file]);
+            
+            $singleFile = Shingle::selectFile($file['text_id']);
+
 
             $file1 = new DocxConversion($singleFile);
             $text1 = ($file1->convertToText());
-
 
             $results = [];
 
@@ -34,7 +34,14 @@ class IndexController extends Controller
                 $result = new Plagiat($file2->convertToText(), $file1->convertToText());
                 array_push($results, $result->get());
             }
-                $finish = max($results);
+            $finish = 'Унікальність: ' . (100 - max($results)). '%';
+
+            if (Shingle::deleteFile($file['text_id']))
+                unlink($singleFile);
+
+            return $this->render('main/main.php', ['finish' => $finish]);
+
+            
         }
 
         return $this->render('main/main.php');
@@ -43,26 +50,28 @@ class IndexController extends Controller
 
     private function uploadFile()
     {
+        $answer = [];
+
         $continue = true;
         $target_dir = "temp/";
         $target_file = $target_dir . ($_FILES["fileToUpload"]["name"]);
 
         $uploadOk = 1;
-        $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
+        $fileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
 
 // Check file size
         if ($_FILES["fileToUpload"]["size"] > 5000000) {
-            echo "Sorry, your file is too large.";
+            $answer[] = "Sorry, your file is too large.";
             $uploadOk = 0;
         }
 // Allow certain file formats
-        if($imageFileType != "docx" && $imageFileType != "doc") {
-            echo "Sorry, only DOCX files is allowed.";
+        if($fileType != "docx" && $fileType != "pdf") {
+            $answer[] =  "Sorry, only DOCX or PDF files is allowed.";
             $uploadOk = 0;
         }
 // Check if $uploadOk is set to 0 by an error
         if ($uploadOk == 0) {
-            die("Sorry, your file was not uploaded.");
+            $answer[] = "Sorry, your file was not uploaded.";
 // if everything is ok, try to upload file
         } else {
 
@@ -81,12 +90,15 @@ class IndexController extends Controller
                     'path' => $target_file
                 ], 'move');}
 
-                echo "The file ". $_FILES["fileToUpload"]["name"]. " has been uploaded.";
+                $answer[] =  "The file ". $_FILES["fileToUpload"]["name"]. " has been uploaded.";
+                $answer['text_id'] = $text_id;
+
             } else {
-                echo "Sorry, there was an error uploading your file.";
+                $answer[] =  "Sorry, there was an error uploading your file.";
             }
         }
 
-        return $text_id;
+
+        return $answer;
     }
 }

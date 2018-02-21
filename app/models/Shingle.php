@@ -91,4 +91,15 @@ class Shingle extends Model
         $ink = $stmt->fetch();
         return $ink['path'];
     }
+    
+    public static function deleteFile($id)
+    {
+        $db = self::connect();
+        $stmt = $db->prepare('DELETE FROM files WHERE id = :id');
+        $stmt->execute([
+            'id' =>$id 
+        ]);
+
+        return true;
+    }
 }

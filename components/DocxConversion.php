@@ -12,14 +12,6 @@ class DocxConversion
         $this->name = $fileName;
     }
 
-    private function read_doc() {
-        print_r($this->name);
-        $this->name = explode('.',$this->name);
-        $this->name = 'uploads/' . $this->name[0] . '.docx' ;
-        //print_r($this->name);
-
-     //   return $outtext;
-    }
 
     private function read_docx(){
 
@@ -50,47 +42,9 @@ class DocxConversion
         return $striped_content;
     }
 
-    /************************excel sheet************************************/
-
-    function xlsx_to_text($input_file){
-        $xml_filename = "xl/sharedStrings.xml"; //content file name
-        $zip_handle = new ZipArchive;
-        $output_text = "";
-        if(true === $zip_handle->open($input_file)){
-            if(($xml_index = $zip_handle->locateName($xml_filename)) !== false){
-                $xml_datas = $zip_handle->getFromIndex($xml_index);
-                $xml_handle = DOMDocument::loadXML($xml_datas, LIBXML_NOENT | LIBXML_XINCLUDE | LIBXML_NOERROR | LIBXML_NOWARNING);
-                $output_text = strip_tags($xml_handle->saveXML());
-            }else{
-                $output_text .="";
-            }
-            $zip_handle->close();
-        }else{
-            $output_text .="";
-        }
-        return $output_text;
-    }
-
-    /*************************power point files*****************************/
-    function pptx_to_text($input_file){
-        $zip_handle = new ZipArchive;
-        $output_text = "";
-        if(true === $zip_handle->open($input_file)){
-            $slide_number = 1; //loop through slide files
-            while(($xml_index = $zip_handle->locateName("ppt/slides/slide".$slide_number.".xml")) !== false){
-                $xml_datas = $zip_handle->getFromIndex($xml_index);
-                $xml_handle = DOMDocument::loadXML($xml_datas, LIBXML_NOENT | LIBXML_XINCLUDE | LIBXML_NOERROR | LIBXML_NOWARNING);
-                $output_text .= strip_tags($xml_handle->saveXML());
-                $slide_number++;
-            }
-            if($slide_number == 1){
-                $output_text .="";
-            }
-            $zip_handle->close();
-        }else{
-            $output_text .="";
-        }
-        return $output_text;
+    private function read_pdf()
+    {
+        \Spatie\PdfToText\Pdf::getText($this->filename);
     }
 
 
@@ -108,8 +62,8 @@ class DocxConversion
                 return $this->read_doc();
             } elseif($file_ext == "docx") {
                 return $this->read_docx();
-            } elseif($file_ext == "xlsx") {
-                return $this->xlsx_to_text();
+            } elseif($file_ext == "pdf") {
+                return $this->read_pdf();
             }elseif($file_ext == "pptx") {
                 return $this->pptx_to_text();
             }

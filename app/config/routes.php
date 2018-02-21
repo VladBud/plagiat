@@ -25,6 +25,10 @@ return [
         'defaults' => 'Security/logout',
         'path' => '/logout'
     ],
+    'parser' => [
+        'defaults' => 'Admin/parser',
+        'path' => '/admin/parse'
+    ],
     'adminpage' => [
         'defaults' => 'Admin/index',
         'path' => '/admin'

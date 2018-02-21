@@ -11,6 +11,7 @@
     <link href="/template/css/bootstrap.min.css" rel="stylesheet">
     <link href="/template/font-awesome/css/font-awesome.css" rel="stylesheet">
     <link href="/template/css/animate.css" rel="stylesheet">
+    <link href="/template/css/plugins/toastr/toastr.min.css" rel="stylesheet">
     <link href="/template/css/plugins/dropzone/basic.css" rel="stylesheet">
     <link href="/template/css/plugins/dropzone/dropzone.css" rel="stylesheet">
     <link href="/template/css/style.css" rel="stylesheet">
@@ -45,7 +46,7 @@
                     </ul>
                 </li>
                 <li>
-                    <a href="/admin"><i class="fa fa-diamond"></i> <span class="nav-label">Layouts</span> <span class="label label-primary pull-right">NEW</span></a>
+                    <a href="/admin"><i class="fa fa-diamond"></i> <span class="nav-label">Layouts</span></a>
                 </li>
                 <li>
                     <a href="#"><i class="fa fa-bar-chart-o"></i> <span class="nav-label">Graphs</span><span class="fa arrow"></span></a>
@@ -59,7 +60,7 @@
                     </ul>
                 </li>
                 <li>
-                    <a href="/admin"><i class="fa fa-envelope"></i> <span class="nav-label">Mailbox </span><span class="label label-warning pull-right">16/24</span></a>
+                    <a href="/admin"><i class="fa fa-envelope"></i> <span class="nav-label">Mailbox </span></a>
                     <ul class="nav nav-second-level">
                         <li><a href="/admin">Inbox</a></li>
                         <li><a href="/admin">Email view</a></li>
@@ -70,18 +71,8 @@
                 <li>
                     <a href="/admin"><i class="fa fa-flask"></i> <span class="nav-label">Widgets</span> </a>
                 </li>
-                <li class="active">
-                    <a href="#"><i class="fa fa-edit"></i> <span class="nav-label">Forms</span><span class="fa arrow"></span></a>
-                    <ul class="nav nav-second-level">
-                        <li><a href="/admin">Basic form</a></li>
-                        <li><a href="/admin">Advanced Plugins</a></li>
-                        <li><a href="/admin">Wizard</a></li>
-                        <li class="active"><a href="/admin">File Upload</a></li>
-                        <li><a href="/admin">Text Editor</a></li>
-                    </ul>
-                </li>
                 <li>
-                    <a href="#"><i class="/admin"></i> <span class="nav-label">App Views</span>  <span class="pull-right label label-primary">SPECIAL</span></a>
+                    <a href="#"><i class="/admin"></i> <span class="nav-label">App Views</span></a>
                     <ul class="nav nav-second-level">
                         <li><a href="/admin">Contacts</a></li>
                         <li><a href="/admin">Profile</a></li>
@@ -109,7 +100,7 @@
                     </ul>
                 </li>
                 <li>
-                    <a href="#"><i class="fa fa-globe"></i> <span class="nav-label">Miscellaneous</span><span class="label label-info pull-right">NEW</span></a>
+                    <a href="#"><i class="fa fa-globe"></i> <span class="nav-label">Miscellaneous</span></a>
                     <ul class="nav nav-second-level">
                         <li><a href="/admin">Notification</a></li>
                         <li><a href="/admin">Nestable list</a></li>
@@ -206,7 +197,7 @@
                         <span class="m-r-sm text-muted welcome-message">Welcome to AdminPage</span>
                     </li>
                     <li>
-                        <a href="/">
+                        <a href="<?= path('logoutpage') ?>">
                             <i class="fa fa-sign-out"></i> Log out
                         </a>
                     </li>
@@ -238,11 +229,13 @@
 <!--                                </div>-->
 <!--                                <input type="submit" value="Submit this form!" name="upload" class="btn btn-primary pull-right">-->
 <!--                            </form>-->
-                            <form enctype="multipart/form-data" method="post" class="dropzone" action="/admin">
-                                <strong>Оригинальный текст</strong>:<br />
-                                    <input type="file" name="fileToUpload" id="fileToUpload">
+                            <form enctype="multipart/form-data" method="post" action="/admin">
+                                <strong>Загрузіть файл або папку в базу данних</strong>:<br />
+<!--                                    <input type="file" webkitdirectory directory multiple name="fileToUpload" class="form-control" id="fileToUpload">-->
+                                    <input type="file" name="fileToUpload" class="form-control" id="fileToUpload">
                                 <br />
-                                <input type="submit" name="submit" value="Проверить" style="display: block; margin: 0 auto; font-weight: bold; width: 50%;" />
+                                <input type="submit" value="Submit this form!" name="submit" class="btn btn-primary">
+<!--                                <input type="submit" name="submit" value="Проверить" style="display: block; margin: 0 auto; font-weight: bold; width: 50%;" />-->
                             </form>
 
                         </div>
@@ -275,6 +268,7 @@
 <!-- Custom and plugin javascript -->
 <script src="/template/js/inspinia.js"></script>
 <script src="/template/js/plugins/pace/pace.min.js"></script>
+<script src="/template/js/plugins/toastr/toastr.min.js"></script>
 
 <!-- DROPZONE -->
 <script src="/template/js/plugins/dropzone/dropzone.js"></script>
@@ -282,7 +276,11 @@
 
 <script>
     $(document).ready(function(){
-
+<?php if (isset($answer)): ?>
+        <?php foreach ( $answer as $answers ): ?>
+                    toastr.success("<?= $answers; ?>");
+        <?php endforeach; ?>
+<?php endif; ?>
         Dropzone.options.myAwesomeDropzone = {
 
             autoProcessQueue: false,

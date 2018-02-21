@@ -4,16 +4,22 @@ namespace app\controllers;
 
 use app\Controller;
 use app\models\Shingle;
+use components\Converter;
+use ZipArchive;
 
 class AdminController extends Controller
 {
+
+    private $formats = [
+        'docx',
+        'pdf',
+    ];
+
     public function indexAction()
     {
         if(isset($_POST["submit"])) {
             $file = $this->uploadFile();
-            print_r($_POST);
-
-            return true;
+            return $this->render('admin/adm1n.php', ['answer' =>$file]);
         }
 
         if (!(isset($_SESSION['auth'])))
@@ -26,26 +32,28 @@ class AdminController extends Controller
 
     private function uploadFile()
     {
+        $answer = [];
+
         $continue = true;
         $target_dir = "uploads/";
         $target_file = $target_dir . ($_FILES["fileToUpload"]["name"]);
 
         $uploadOk = 1;
-        $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
+        $fileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
 
 // Check file size
         if ($_FILES["fileToUpload"]["size"] > 5000000) {
-            echo "Sorry, your file is too large.";
+           $answer[] =  "Sorry, your file is too large.";
             $uploadOk = 0;
         }
 // Allow certain file formats
-        if($imageFileType != "docx" && $imageFileType != "doc") {
-            echo "Sorry, only DOCX files is allowed.";
+        if($fileType != "docx" && $fileType != "pdf" && $fileType != "zip") {
+            $answer[] =  "Sorry, only DOCX, PDF or ZIP files is allowed.";
             $uploadOk = 0;
         }
 // Check if $uploadOk is set to 0 by an error
         if ($uploadOk == 0) {
-            return die("Sorry, your file was not uploaded.");
+            $answer[] = ("Sorry, your file was not uploaded.");
 
 // if everything is ok, try to upload file
         } else {
@@ -57,21 +65,65 @@ class AdminController extends Controller
                 $continue = false;
             }
 
-            if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
-
-                if ($continue){
+            if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file))
+            {
+                if ($continue && $fileType != "zip"){
                     $text_id = Shingle::addFinishedShingles([
                         'title' =>  $_FILES["fileToUpload"]["name"],
                         'path' => $target_file
                     ]);
                 }
 
-                echo "The file ". $_FILES["fileToUpload"]["name"]. " has been uploaded.";
+                $answer[] =  "The file ". $_FILES["fileToUpload"]["name"]. " has been uploaded.";
+
+                if( $fileType === "zip") {
+                    $zip = new ZipArchive;
+                    $res = $zip->open('uploads/'. $_FILES["fileToUpload"]["name"]);
+
+                    if ($res === TRUE) {
+                        for($i = 0; $i < $zip->numFiles; $i++) {
+                            if(! is_dir($zip->getNameIndex($i)))
+                            {
+                                $explode = explode(".", $zip->getNameIndex($i));
+                                
+                                if (in_array(end($explode), $this->formats))
+                                {
+                                    $zip->extractTo('uploads/', array($zip->getNameIndex($i)));
+
+                                    Shingle::addFinishedShingles([
+                                        'title' =>  $zip->getNameIndex($i),
+                                        'path' => 'uploads/'. $zip->getNameIndex($i)
+                                    ]);
+                                }
+                            }
+                        }
+                        $zip->close();
+
+
+
+                        unlink('uploads/'. $_FILES["fileToUpload"]["name"]);
+
+                    } else {
+                        die ('doh!');
+                    }
+                }
+
+
             } else {
-                echo "Sorry, there was an error uploading your file.";
+                $answer[] =  "Sorry, there was an error uploading your file.";
             }
         }
 
-        return $text_id;
+        return $answer;
+    }
+
+    public function parserAction()
+    {
+        
+
+        $page = file_get_contents('http://ua.textreferat.com/referat-19679-1.html');
+        return $this->render('admin/parser.php', [
+            'page' => $page
+        ]);
     }
 }

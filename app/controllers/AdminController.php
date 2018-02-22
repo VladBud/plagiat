@@ -82,6 +82,7 @@ class AdminController extends Controller
 
                     if ($res === TRUE) {
                         for($i = 0; $i < $zip->numFiles; $i++) {
+
                             if(! is_dir($zip->getNameIndex($i)))
                             {
                                 $explode = explode(".", $zip->getNameIndex($i));
@@ -90,9 +91,19 @@ class AdminController extends Controller
                                 {
                                     $zip->extractTo('uploads/', array($zip->getNameIndex($i)));
 
+                                    $explode2 = explode('/',$zip->getNameIndex($i));
+                                    $basename = basename(end($explode2));
+                                    array_pop($explode2);
+
+                                    $name = '';
+
+                                    foreach ($explode2 as $item) {
+                                        $name .= $item . '/';
+                                    }
+
                                     Shingle::addFinishedShingles([
                                         'title' =>  $zip->getNameIndex($i),
-                                        'path' => 'uploads/'. $zip->getNameIndex($i)
+                                        'path' => 'uploads/'. $name  . $basename
                                     ]);
                                 }
                             }

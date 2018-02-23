@@ -6,7 +6,8 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>INSPINIA | Empty Page</title>
+    <title>Перевірка на копірайт</title>
+    <link rel="shortcut icon" type="image/x-icon" href="/template/img/favicon.ico"/>
 
     <link href="/template/css/bootstrap.min.css" rel="stylesheet">
     <link href="/template/font-awesome/css/font-awesome.css" rel="stylesheet">
@@ -27,15 +28,7 @@
         </div>
         <div class="row wrapper border-bottom white-bg page-heading">
             <div class="col-sm-4">
-                <h2>This is main title</h2>
-                <ol class="breadcrumb">
-                    <li>
-                        <a href="index.html">This is</a>
-                    </li>
-                    <li class="active">
-                        <strong>Breadcrumb</strong>
-                    </li>
-                </ol>
+                <h2>Перевірка на плагіат</h2>
             </div>
         </div>
         <div class="row">
@@ -63,7 +56,7 @@
         <div class="footer">
 
             <div>
-                <strong>Copyright</strong> Example Company &copy; 2014-2015
+                <strong>Designed and developed by </strong>Vladislav Bud &copy; 2017-2018
             </div>
         </div>
 
@@ -82,7 +75,7 @@
 <script src="/template/js/plugins/toastr/toastr.min.js"></script>
 <script>
     <?php foreach ( $answer as $answers  ): ?>
-        toastr.success("<?= $answers ?>");
+        toastr.info("<?= $answers ?>");
     <?php endforeach; ?>
 </script>
 

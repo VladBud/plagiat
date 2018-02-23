@@ -20,7 +20,7 @@ class SecurityController extends Controller
                 if (self::LOGIN == $login && self::PASS == $pass) {
                     $_SESSION['auth'] = true;
                     
-                    return $this->redirectToRoute('adminpage');
+                    return redirectToRoute('adminpage');
                     
                 } else {
                     return $this->render('security/login.php');
@@ -30,7 +30,7 @@ class SecurityController extends Controller
             return $this->render('security/login.php');
         }
 
-        return $this->redirectToRoute('adminpage');
+        return redirectToRoute('adminpage');
     }
 
     public function logoutAction()
@@ -40,6 +40,6 @@ class SecurityController extends Controller
             unset($_SESSION['auth']);
         }
 
-        return $this->redirectToRoute('loginpage');
+        return redirectToRoute('loginpage');
     }
 }

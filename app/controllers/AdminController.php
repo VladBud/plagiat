@@ -24,7 +24,7 @@ class AdminController extends Controller
 
         if (!(isset($_SESSION['auth'])))
         {
-            return $this->redirectToRoute('loginpage');
+            return redirectToRoute('loginpage');
         }
         
        return $this->render('admin/adm1n.php');
@@ -33,6 +33,7 @@ class AdminController extends Controller
     private function uploadFile()
     {
         $answer = [];
+        $counter = 0;
 
         $continue = true;
         $target_dir = "uploads/";
@@ -43,17 +44,23 @@ class AdminController extends Controller
 
 // Check file size
         if ($_FILES["fileToUpload"]["size"] > 5000000) {
-           $answer[] =  "Sorry, your file is too large.";
+           $answer[$counter]['msg'] =  "Sorry, your file is too large.";
+           $answer[$counter]['type'] =  "error";
+            $counter++;
             $uploadOk = 0;
         }
 // Allow certain file formats
         if($fileType != "docx" && $fileType != "pdf" && $fileType != "zip") {
-            $answer[] =  "Sorry, only DOCX, PDF or ZIP files is allowed.";
+            $answer[$counter]['msg'] =  "Sorry, only DOCX, PDF or ZIP files is allowed.";
+            $answer[$counter]['type'] =  "error";
+            $counter++;
             $uploadOk = 0;
         }
 // Check if $uploadOk is set to 0 by an error
         if ($uploadOk == 0) {
-            $answer[] = ("Sorry, your file was not uploaded.");
+            $answer[$counter]['msg'] = ("Sorry, your file was not uploaded.");
+            $answer[$counter]['type'] =  "error";
+            $counter++;
 
 // if everything is ok, try to upload file
         } else {
@@ -74,7 +81,9 @@ class AdminController extends Controller
                     ]);
                 }
 
-                $answer[] =  "The file ". $_FILES["fileToUpload"]["name"]. " has been uploaded.";
+                $answer[$counter]['msg'] =  "The file ". $_FILES["fileToUpload"]["name"]. " has been uploaded.";
+                $answer[$counter]['type'] =  "ok";
+                $counter++;
 
                 if( $fileType === "zip") {
                     $zip = new ZipArchive;
@@ -121,7 +130,9 @@ class AdminController extends Controller
 
 
             } else {
-                $answer[] =  "Sorry, there was an error uploading your file.";
+                $answer[$counter]['msg'] =  "Sorry, there was an error uploading your file.";
+                $answer[$counter]['type'] =  "error";
+                $counter++;
             }
         }
 

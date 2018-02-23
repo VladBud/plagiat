@@ -8,18 +8,17 @@ class Shingle extends Model
 {
     public static function addShingles($text = false, $debug = false)
     {
-        $db = self::connect();
 
         if ($text)
         {
 
-            $stmt = $db->prepare("INSERT INTO files(title, path) VALUES(:title, :path) ");
+            $stmt = self::$db->prepare("INSERT INTO files(title, path) VALUES(:title, :path) ");
             $stmt->execute([
                 'title' => $text['title'],
                 'path' => $text['path']
             ]);
 
-            $last_insert_id = $db->lastInsertId();
+            $last_insert_id = self::$db->lastInsertId();
 
             return $last_insert_id;
         }
@@ -28,12 +27,10 @@ class Shingle extends Model
 
     public static function addFinishedShingles($text = false)
     {
-        $db = self::connect();
-
         if ($text)
         {
 
-            $stmt = $db->prepare("INSERT INTO finished_files(title, path) VALUES(:title, :path) ");
+            $stmt = self::$db->prepare("INSERT INTO finished_files(title, path) VALUES(:title, :path) ");
             $stmt->execute([
                 'title' => $text['title'],
                 'path' => $text['path']
@@ -47,11 +44,9 @@ class Shingle extends Model
 
     public static function checkFileExist($text)
     {
-        $db = self::connect();
-
         if (file_exists($text['path']))
         {
-            $stmt = $db->prepare("DELETE FROM files WHERE title = :title ");
+            $stmt = self::$db->prepare("DELETE FROM files WHERE title = :title ");
             $stmt->execute([
                 'title' => $text['title']
             ]);
@@ -65,8 +60,7 @@ class Shingle extends Model
 
     public static function selectAllFiles()
     {
-            $db = self::connect();
-            $stmt = $db->query('SELECT path FROM finished_files');
+            $stmt = self::$db->query('SELECT path FROM finished_files');
 
             $data = [];
 
@@ -82,8 +76,7 @@ class Shingle extends Model
 
     public static function selectFile($id)
     {
-        $db = self::connect();
-        $stmt = $db->prepare('SELECT path FROM files WHERE id = :id');
+        $stmt = self::$db->prepare('SELECT path FROM files WHERE id = :id');
         $stmt->execute([
             'id' => $id
         ]);
@@ -94,8 +87,7 @@ class Shingle extends Model
     
     public static function deleteFile($id)
     {
-        $db = self::connect();
-        $stmt = $db->prepare('DELETE FROM files WHERE id = :id');
+        $stmt = self::$db->prepare('DELETE FROM files WHERE id = :id');
         $stmt->execute([
             'id' =>$id 
         ]);

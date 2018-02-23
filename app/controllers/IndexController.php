@@ -5,6 +5,7 @@ namespace app\controllers;
 use app\Controller;
 use components\DocxConversion;
 use app\models\Shingle;
+use components\Logger;
 use components\Plagiat;
 
 class IndexController extends Controller
@@ -32,8 +33,14 @@ class IndexController extends Controller
                 $file2 = new DocxConversion($files);
 
                 $result = new Plagiat($file2->convertToText(), $file1->convertToText());
-                array_push($results, $result->get());
+                $results[$files] = $result->get();
+                $msg = $files . ' : ' . $results[$files] . '% співпадінь';
+                Logger::log($msg, true, false);
+
             }
+
+            Logger::log("\n\n", true);
+
             $finish = 'Унікальність: ' . (100 - max($results)). '%';
 
             if (Shingle::deleteFile($file['text_id']))

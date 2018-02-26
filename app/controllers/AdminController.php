@@ -9,6 +9,11 @@ use ZipArchive;
 
 class AdminController extends Controller
 {
+    public function __construct()
+    {
+        parent::__construct();
+        $this->auth->checkAuth(false, 'loginpage');
+    }
 
     private $formats = [
         'docx',
@@ -20,11 +25,6 @@ class AdminController extends Controller
         if(isset($_POST["submit"])) {
             $file = $this->uploadFile();
             return $this->render('admin/adm1n.php', ['answer' =>$file]);
-        }
-
-        if (!(isset($_SESSION['auth'])))
-        {
-            return redirectToRoute('loginpage');
         }
         
        return $this->render('admin/adm1n.php');

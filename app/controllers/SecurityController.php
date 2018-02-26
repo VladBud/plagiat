@@ -11,20 +11,14 @@ class SecurityController extends Controller
 
     public function loginAction()
     {
-        if (!(isset($_SESSION['auth']))) {
+        if (!$this->auth->checkAuth()) {
 
             if (isset($_POST['l_submit'])) {
                 $login = trim(htmlspecialchars($_POST['l_login']));
-                $pass = trim(htmlspecialchars($_POST['l_pass']));
+                $pass = md5($_POST['l_pass']);
 
-                if (self::LOGIN == $login && self::PASS == $pass) {
-                    $_SESSION['auth'] = true;
-                    
+                if($this->auth->login($login, $pass))
                     return redirectToRoute('adminpage');
-                    
-                } else {
-                    return $this->render('security/login.php');
-                }
             }
 
             return $this->render('security/login.php');
@@ -35,11 +29,6 @@ class SecurityController extends Controller
 
     public function logoutAction()
     {
-        if (isset($_SESSION['auth']))
-        {
-            unset($_SESSION['auth']);
-        }
-
-        return redirectToRoute('loginpage');
+        return $this->auth->logout();
     }
 }

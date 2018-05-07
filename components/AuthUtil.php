@@ -7,7 +7,8 @@ use app\models\Session;
 class AuthUtil
 {
     private $loginPath = '/login';
-    private $logoutPath = '/logout';
+    private $defaultRedirect = 'https://www.google.com/';
+    private $defaultSuccessRoute = 'adminpage';
     /**
      * @var array|boolean $user
      */
@@ -23,23 +24,31 @@ class AuthUtil
         }
     }
     /**
+     * Try to authenticate user or return false
+     *
      * @param array $user
+     * @param mixed $redirectToRouteAfterSuccess
      * @return bool
      */
-    private function auth($user)
+    private function auth($user, $redirectToRouteAfterSuccess = false)
     {
         try {
             if(Session::createSession($user)){
                 setcookie('user', serialize($user), time() + 604800);
                 $_SESSION['user'] = $user;
-                return true;
+                if($redirectToRouteAfterSuccess)
+                    return redirectToRoute($redirectToRouteAfterSuccess);
+                return redirectToRoute($this->defaultSuccessRoute);
             }
         } catch (PDOException $e){
-            return print_r($e->getMessage());
+            Logger::log($e->getMessage());
+            return false;
         }
-        return true;
+        return false;
     }
     /**
+     * Check if isset $this->user and validate hash
+     *
      * @param string|boolean $role
      * @return bool
      */
@@ -55,7 +64,8 @@ class AuthUtil
         return true;
     }
     /**
-     * public function
+     * Public function to check if user is authenticated
+     *
      * @param string|boolean $role
      * @param string|boolean $routeIfAccessDenied
      * @return mixed
@@ -70,27 +80,22 @@ class AuthUtil
         }
         return true;
     }
-    
     /**
+     * Login user
+     *
      * @param string $login
-     * @param string $password
-     * @return mixed
+     * @param string $password in md5 format
      */
     public function login($login, $password)
     {
         if($this->isAuth())
-            return redirectToRoute('adminpage');
+            redirect($this->defaultRedirect);
         /**
          * @var array $userData
          */
         $userData = User::getUserHashByCredentials($login, $password);
         if($userData)
-        {
             $this->auth($userData);
-            return true;
-        }
-
-        return false;
     }
     /**
      * Unset session and redirect to login page
@@ -104,6 +109,8 @@ class AuthUtil
             redirect($this->loginPath);
     }
     /**
+     * Register user
+     *
      * @param string $username
      * @param string $password
      * @return mixed
@@ -127,20 +134,24 @@ class AuthUtil
     }
     /**
      * Delete session info
+     *
      * @return bool|mixed
      */
     private function unsetSession()
     {
         try {
             if($_SESSION['user']){
-                if(isset($_COOKIE['user']) && $_COOKIE['user'])
+                if(isset($_COOKIE['user']) && $_COOKIE['user']){
                     setcookie('user', false, time() - 604800);
+                    unset($_COOKIE['user']);
+                }
                 Session::deleteSession($_SESSION['user']);
                 unset($_SESSION['user']);
             }
             return true;
         } catch (Exception $e){
-            return print_r($e->getMessage());
+            Logger::log($e->getMessage());
+            return false;
         }
     }
 }

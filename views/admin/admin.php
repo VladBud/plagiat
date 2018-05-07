@@ -87,9 +87,9 @@
                     <div class="ibox float-e-margins">
                         <div class="ibox-content">
                             <form enctype="multipart/form-data" method="post" action="/admin">
-                                <strong>Загрузіть файл або папку в базу данних</strong>:<br />
-                                    <input type="file" name="fileToUpload" class="form-control" id="fileToUpload">
-                                <input type="submit" value="Submit this form!" name="submit" class="btn btn-primary">
+                                <strong>Загрузіть файл або папку в базу данних:</strong><br /><br>
+                                    <input type="file" name="fileToUpload" class="form-control" id="fileToUpload"><br>
+                                <input type="submit" value="Записати файл в базу" name="submit" class="btn btn-primary">
                             </form>
                         </div>
 

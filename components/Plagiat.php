@@ -44,12 +44,12 @@ class Plagiat
 
     private function check_it($first, $second) {
         if (!$first || !$second) {
-            echo "Отсутствуют оба или один из текстов!";
+            echo "Відсутні обидва або один з текстів!";
             return 0;
         }
 
-        if (strlen($first)>200000 || strlen($second)>200000) {
-            echo "Длина обоих или одного из текстов превысила допустимую!";
+        if (strlen($first)>20000000 || strlen($second)>20000000) {
+            echo "Довжина обох або одного з текстів перевищила допустиму!";
             return 0;
         }
 
@@ -58,7 +58,7 @@ class Plagiat
             $this->second_shingles = array_unique($this->get_shingle($second,$i));
 
             if(count($this->first_shingles) < $i-1 || count($this->second_shingles) < $i-1) {
-                echo "Количество слов в тексте меньше чем длинна шинглы<br />";
+                echo "Кількість слів в тексті менша ніж довжина шинглів";
                 continue;
             }
 

@@ -24,10 +24,10 @@ class AdminController extends Controller
     {
         if(isset($_POST["submit"])) {
             $file = $this->uploadFile();
-            return $this->render('admin/adm1n.php', ['answer' =>$file]);
+            return $this->render('admin/admin.php', ['answer' =>$file]);
         }
         
-       return $this->render('admin/adm1n.php');
+       return $this->render('admin/admin.php');
     }
 
     private function uploadFile()
@@ -43,7 +43,7 @@ class AdminController extends Controller
         $fileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
 
 // Check file size
-        if ($_FILES["fileToUpload"]["size"] > 5000000) {
+        if ($_FILES["fileToUpload"]["size"] > 500000000) {
            $answer[$counter]['msg'] =  "Sorry, your file is too large.";
            $answer[$counter]['type'] =  "error";
             $counter++;
@@ -60,7 +60,6 @@ class AdminController extends Controller
         if ($uploadOk == 0) {
             $answer[$counter]['msg'] = ("Sorry, your file was not uploaded.");
             $answer[$counter]['type'] =  "error";
-            $counter++;
 
 // if everything is ok, try to upload file
         } else {
@@ -75,7 +74,7 @@ class AdminController extends Controller
             if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file))
             {
                 if ($continue && $fileType != "zip"){
-                    $text_id = Shingle::addFinishedShingles([
+                     Shingle::addFinishedShingles([
                         'title' =>  $_FILES["fileToUpload"]["name"],
                         'path' => $target_file
                     ]);
@@ -83,8 +82,8 @@ class AdminController extends Controller
 
                 $answer[$counter]['msg'] =  "The file ". $_FILES["fileToUpload"]["name"]. " has been uploaded.";
                 $answer[$counter]['type'] =  "ok";
-                $counter++;
 
+//                dump($fileType);exit();
                 if( $fileType === "zip") {
                     $zip = new ZipArchive;
                     $res = $zip->open('uploads/'. $_FILES["fileToUpload"]["name"]);

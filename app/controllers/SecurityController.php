@@ -17,6 +17,7 @@ class SecurityController extends Controller
                 $login = trim(htmlspecialchars($_POST['l_login']));
                 $pass = md5($_POST['l_pass']);
 
+
                 if($this->auth->login($login, $pass))
                     return redirectToRoute('adminpage');
             }

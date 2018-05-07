@@ -70,7 +70,7 @@ class Shingle extends Model
                 $data[$count] = $row['path'];
                 $count++;
             }
-
+        
             return $data;
     }
 
@@ -93,5 +93,21 @@ class Shingle extends Model
         ]);
 
         return true;
+    }
+    
+    public static function selectAllFinishedFiles()
+    {
+        $stmt = self::$db->query('SELECT * FROM finished_files ORDER BY id ASC ');
+        
+        $data = [];
+
+        $count = 0;
+        while ($row = $stmt->fetch())
+        {
+            $data[$count] = $row;
+            $count++;
+        }
+
+        return $data;
     }
 }

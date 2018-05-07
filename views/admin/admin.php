@@ -38,18 +38,18 @@
                     </div>
                 </li>
                 <li>
-                    <a href="/admin"><i class="fa fa-th-large"></i> <span class="nav-label">V1</span></a>
+                    <a href="<?= path('adminpage') ?>"><i class="fa fa-th-large"></i> <span class="nav-label">Добавити файл</span></a>
 
                 </li>
                 <li>
-                    <a href="/admin"><i class="fa fa-diamond"></i> <span class="nav-label">Layouts</span></a>
+                    <a href="<?= path('files') ?>"><i class="fa fa-diamond"></i> <span class="nav-label">Файли БД</span></a>
                 </li>
                 <li>
-                    <a href="/admin"><i class="fa fa-bar-chart-o"></i> <span class="nav-label">Graphs</span></a>
+                    <a href="<?= path('logs') ?>"><i class="fa fa-bar-chart-o"></i> <span class="nav-label">Логи</span></a>
                 </li>
-                <li>
-                    <a href="/admin"><i class="fa fa-flask"></i> <span class="nav-label">Widgets</span> </a>
-                </li>
+<!--                <li>-->
+<!--                    <a href="/admin"><i class="fa fa-flask"></i> <span class="nav-label">Widgets</span> </a>-->
+<!--                </li>-->
             </ul>
 
         </div>
@@ -76,7 +76,7 @@
         </div>
         <div class="row wrapper border-bottom white-bg page-heading">
             <div class="col-lg-10">
-                <h2>File upload</h2>
+                <h2>Завантаження файлу</h2>
             </div>
             <div class="col-lg-2">
             </div>
@@ -87,9 +87,9 @@
                     <div class="ibox float-e-margins">
                         <div class="ibox-content">
                             <form enctype="multipart/form-data" method="post" action="/admin">
-                                <strong>Загрузіть файл або папку в базу данних:</strong><br /><br>
+                                <strong>Загрузіть файл або zip-архів в базу данних:</strong><br /><br>
                                     <input type="file" name="fileToUpload" class="form-control" id="fileToUpload"><br>
-                                <input type="submit" value="Записати файл в базу" name="submit" class="btn btn-primary">
+                                    <input type="submit" value="Зберегти в базу" name="submit" class="btn btn-primary">
                             </form>
                         </div>
 

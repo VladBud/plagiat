@@ -140,11 +140,21 @@ class AdminController extends Controller
 
     public function parserAction()
     {
-        
-
         $page = file_get_contents('http://ua.textreferat.com/referat-19679-1.html');
         return $this->render('admin/parser.php', [
             'page' => $page
         ]);
+    }
+
+    public function filesAction()
+    {
+        return $this->render('admin/files.php',[
+            'files' => Shingle::selectAllFinishedFiles()
+        ]);
+    }
+
+    public function logsAction()
+    {
+        return $this->render('admin/logs.php');
     }
 }

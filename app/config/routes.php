@@ -29,6 +29,14 @@ return [
         'defaults' => 'Admin/parser',
         'path' => '/admin/parse'
     ],
+    'files' => [
+        'defaults' => 'Admin/files',
+        'path' => '/admin/files'
+    ],
+    'logs' => [
+        'defaults' => 'Admin/logs',
+        'path' => '/admin/logs'
+    ],
     'adminpage' => [
         'defaults' => 'Admin/index',
         'path' => '/admin'

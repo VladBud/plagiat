@@ -16,6 +16,7 @@
     <link href="/template/css/plugins/dropzone/basic.css" rel="stylesheet">
     <link href="/template/css/plugins/dropzone/dropzone.css" rel="stylesheet">
     <link href="/template/css/style.css" rel="stylesheet">
+    <link href="//cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css" rel="stylesheet">
 
 </head>
 
@@ -76,23 +77,45 @@
         </div>
         <div class="row wrapper border-bottom white-bg page-heading">
             <div class="col-lg-10">
-                <h2>Завантаження файлу</h2>
+                <h2>Логи за день</h2>
             </div>
             <div class="col-lg-2">
             </div>
         </div>
-        <div class="wrapper wrapper-content animated fadeIn">
+
+        <div class="wrapper wrapper-content animated fadeInRight">
             <div class="row">
                 <div class="col-lg-12">
                     <div class="ibox float-e-margins">
-                        <div class="ibox-content">
-                            <form enctype="multipart/form-data" method="post" action="/admin">
-                                <strong>Загрузіть файл або zip-архів в базу данних:</strong><br /><br>
-                                    <input type="file" name="fileToUpload" class="form-control" id="fileToUpload"><br>
-                                    <input type="submit" value="Зберегти в базу" name="submit" class="btn btn-primary">
-                            </form>
+                        <div class="ibox-title">
+                            <h5>Таблиця логів</h5>
+                            <div class="ibox-tools">
+                                <a class="collapse-link">
+                                    <i class="fa fa-chevron-up"></i>
+                                </a>
+                            </div>
                         </div>
+                        <div class="ibox-content">
 
+                            <table id="logs" class="table table-striped table-bordered table-hover dataTables-example" >
+                                <thead>
+                                <tr>
+                                    <th>Дата</th>
+                                    <th>Назва файлу</th>
+                                    <th>Відсоток співпадінь</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <?php foreach ($logs as $log): ?>
+                                    <tr class="gradeC">
+                                        <td><?= $log['date'] ?></td>
+                                        <td><?= $log['title'] ?></td>
+                                        <td><?= $log['coincidence'] ?></td>
+                                    </tr>
+                                <?php endforeach; ?>
+                                </tbody>
+                            </table>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -122,27 +145,15 @@
 <script src="/template/js/inspinia.js"></script>
 <script src="/template/js/plugins/pace/pace.min.js"></script>
 <script src="/template/js/plugins/toastr/toastr.min.js"></script>
+<script src="//cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
 
 <!-- DROPZONE -->
 <script src="/template/js/plugins/dropzone/dropzone.js"></script>
 
-
 <script>
-    $(document).ready(function(){
-        <?php if (isset($answer)): ?>
-        <?php foreach ( $answer as $answers ): ?>
-        <?php if($answers['type'] === 'error'): ?>
-            toastr.info("<?= $answers['msg']; ?>");
-        <?php elseif ($answers['type'] === 'ok'): ?>
-            toastr.success("<?= $answers['msg']; ?>");
-        <?php endif; ?>
-        <?php endforeach; ?>
-
-<?php endif; ?>
-
-    });
+    $(document).ready( function () {
+        $('#logs').DataTable({
+            "pageLength": 50
+        });
+    } );
 </script>
-
-</body>
-
-</html>

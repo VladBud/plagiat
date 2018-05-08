@@ -155,6 +155,33 @@ class AdminController extends Controller
 
     public function logsAction()
     {
-        return $this->render('admin/logs.php');
+        $result = [];
+        if(file_exists('logs/' . date("d-m-Y") . '.txt'))
+        {
+           $logsForDay = file_get_contents('logs/' . date("d-m-Y") . '.txt');
+            $rows = explode("\n", $logsForDay);
+
+            $counter = 0;
+            foreach ($rows as $row){
+                if (empty($row[0]))
+                    continue;
+
+                $twoElements = explode(" ] ", $row);
+                $date = $twoElements[0];
+
+                $title = explode(" : ", $twoElements[1])[0];
+                $coincidence = explode(" : ", $twoElements[1])[1];
+
+                $result[$counter]['date'] = $date;
+                $result[$counter]['title'] = $title;
+                $result[$counter]['coincidence'] = $coincidence;
+
+                $counter++;
+            }
+        }
+
+        return $this->render('admin/logs.php', [
+            'logs' => $result
+        ]);
     }
 }

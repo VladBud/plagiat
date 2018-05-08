@@ -39,7 +39,6 @@ class IndexController extends Controller
 
             }
 
-            Logger::log("\n\n", true);
 
             $finish = 'Унікальність: ' . (100 - max($results)). '%';
 

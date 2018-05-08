@@ -16,6 +16,7 @@
     <link href="/template/css/plugins/dropzone/basic.css" rel="stylesheet">
     <link href="/template/css/plugins/dropzone/dropzone.css" rel="stylesheet">
     <link href="/template/css/style.css" rel="stylesheet">
+    <link href="//cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css" rel="stylesheet">
 
 </head>
 
@@ -76,23 +77,45 @@
         </div>
         <div class="row wrapper border-bottom white-bg page-heading">
             <div class="col-lg-10">
-                <h2>Завантаження файлу</h2>
+                <h2>Усі файли які є в базі данних</h2>
             </div>
             <div class="col-lg-2">
+
             </div>
         </div>
-        <div class="wrapper wrapper-content animated fadeIn">
+        <div class="wrapper wrapper-content animated fadeInRight">
             <div class="row">
                 <div class="col-lg-12">
                     <div class="ibox float-e-margins">
-                        <div class="ibox-content">
-                            <form enctype="multipart/form-data" method="post" action="/admin">
-                                <strong>Загрузіть файл або zip-архів в базу данних:</strong><br /><br>
-                                    <input type="file" name="fileToUpload" class="form-control" id="fileToUpload"><br>
-                                    <input type="submit" value="Зберегти в базу" name="submit" class="btn btn-primary">
-                            </form>
+                        <div class="ibox-title">
+                            <h5>Таблиця файлів</h5>
+                            <div class="ibox-tools">
+                                <a class="collapse-link">
+                                    <i class="fa fa-chevron-up"></i>
+                                </a>
+                            </div>
                         </div>
+                        <div class="ibox-content">
 
+                            <table id="files" class="table table-striped table-bordered table-hover dataTables-example" >
+                                <thead>
+                                <tr>
+                                    <th>Id</th>
+                                    <th>Title</th>
+                                    <th>Path</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <?php foreach ($files as $file): ?>
+                                <tr class="gradeC">
+                                    <td><?= $file['id'] ?></td>
+                                    <td><?= $file['title'] ?></td>
+                                    <td><?= $file['path'] ?></td>
+                                </tr>
+                                <?php endforeach; ?>
+                                </tbody>
+                            </table>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -117,6 +140,7 @@
 <script src="/template/js/bootstrap.min.js"></script>
 <script src="/template/js/plugins/metisMenu/jquery.metisMenu.js"></script>
 <script src="/template/js/plugins/slimscroll/jquery.slimscroll.min.js"></script>
+<script src="//cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
 
 <!-- Custom and plugin javascript -->
 <script src="/template/js/inspinia.js"></script>
@@ -126,23 +150,10 @@
 <!-- DROPZONE -->
 <script src="/template/js/plugins/dropzone/dropzone.js"></script>
 
-
 <script>
-    $(document).ready(function(){
-        <?php if (isset($answer)): ?>
-        <?php foreach ( $answer as $answers ): ?>
-        <?php if($answers['type'] === 'error'): ?>
-            toastr.info("<?= $answers['msg']; ?>");
-        <?php elseif ($answers['type'] === 'ok'): ?>
-            toastr.success("<?= $answers['msg']; ?>");
-        <?php endif; ?>
-        <?php endforeach; ?>
-
-<?php endif; ?>
-
-    });
+    $(document).ready( function () {
+        $('#files').DataTable({
+            "pageLength": 50
+        });
+    } );
 </script>
-
-</body>
-
-</html>

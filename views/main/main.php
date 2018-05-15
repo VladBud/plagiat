@@ -19,8 +19,7 @@
 <body>
 
 <div id="wrapper">
-
-
+    
     <div id="page-wrapper" class="gray-bg">
         <div class="row border-bottom">
             <nav class="navbar navbar-static-top  " role="navigation" style="margin-bottom: 0">

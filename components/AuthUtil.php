@@ -7,7 +7,7 @@ use app\models\Session;
 class AuthUtil
 {
     private $loginPath = '/login';
-    private $defaultRedirect = 'https://www.google.com/';
+    private $defaultRedirect = '/';
     private $defaultSuccessRoute = 'adminpage';
     /**
      * @var array|boolean $user

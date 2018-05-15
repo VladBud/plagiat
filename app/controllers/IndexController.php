@@ -10,7 +10,6 @@ use components\Plagiat;
 
 class IndexController extends Controller
 {
-
     public function indexAction()
     {
         if(isset($_POST["submit"])) {
@@ -18,11 +17,10 @@ class IndexController extends Controller
 
             $allFiles =  Shingle::selectAllFiles();
             if (!isset($file['text_id']))
-                return $this->render('main/main.php', ['answer' => $file]);
+                return $this->render('main/index.php', ['answer' => $file]);
             
             $singleFile = Shingle::selectFile($file['text_id']);
-
-
+            
             $file1 = new DocxConversion($singleFile);
             $text1 = ($file1->convertToText());
 
@@ -34,23 +32,23 @@ class IndexController extends Controller
 
                 $result = new Plagiat($file2->convertToText(), $file1->convertToText());
                 $results[$files] = $result->get();
+
+                
                 $msg = $files . ' : ' . $results[$files] . '% співпадінь';
                 Logger::log($msg, true, false);
 
             }
-
-
-            $finish = 'Унікальність: ' . (100 - max($results)). '%';
+            
+            $finish = 100 - max($results);
 
             if (Shingle::deleteFile($file['text_id']))
                 unlink($singleFile);
 
-            return $this->render('main/main.php', ['finish' => $finish]);
-
+            return $this->render('main/index.php', ['finish' => $finish]);
             
         }
 
-        return $this->render('main/main.php');
+        return $this->render('main/index.php');
 
     }
 
@@ -65,20 +63,20 @@ class IndexController extends Controller
         $uploadOk = 1;
         $fileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
 
-// Check file size
+    // Check file size
         if ($_FILES["fileToUpload"]["size"] > 5000000) {
-            $answer[] = "Sorry, your file is too large.";
+            $answer[] = "Вибачте, Ваш файл завеликий";
             $uploadOk = 0;
         }
-// Allow certain file formats
+    // Allow certain file formats
         if($fileType != "docx" && $fileType != "pdf") {
-            $answer[] =  "Sorry, only DOCX or PDF files is allowed.";
+            $answer[] =  "Дозволяється завантажувати тільки DOCX або PDF-файли";
             $uploadOk = 0;
         }
-// Check if $uploadOk is set to 0 by an error
+    // Check if $uploadOk is set to 0 by an error
         if ($uploadOk == 0) {
-            $answer[] = "Sorry, your file was not uploaded.";
-// if everything is ok, try to upload file
+            $answer[] = "Вибачте, Ваш файл не був завантажений";
+    // if everything is ok, try to upload file
         } else {
 
             if($text_id = Shingle::checkFileExist([
@@ -100,11 +98,10 @@ class IndexController extends Controller
                 $answer['text_id'] = $text_id;
 
             } else {
-                $answer[] =  "Sorry, there was an error uploading your file.";
+                $answer[] =  "На жаль, під час перевірки файлу сталася помилка. Спробуйте ще раз";
             }
         }
-
-
+        
         return $answer;
     }
 }

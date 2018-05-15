@@ -2,7 +2,6 @@
 <html>
 
 <head>
-
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -22,57 +21,10 @@
 <body>
 
 <div id="wrapper">
-    <nav class="navbar-default navbar-static-side" role="navigation">
-        <div class="sidebar-collapse">
-            <ul class="nav" id="side-menu">
-                <li class="nav-header">
-                    <div class="dropdown profile-element">
-                        <span>
-                            <img alt="image" height="80px" class="img-circle" src="/template/img/icon.png" />
-                        </span>
-                        <a data-toggle="dropdown" class="dropdown-toggle" href="<?= path('adminpage') ?>">
-                            <span class="clear">
-                                <span class="block m-t-xs"> <strong class="font-bold">Admin</strong></span>
-                            </span>
-                        </a>
-                    </div>
-                    <div class="logo-element">
-                        AD
-                    </div>
-                </li>
-                <li>
-                    <a href="<?= path('adminpage') ?>"><i class="fa fa-th-large"></i> <span class="nav-label">Добавити файл</span></a>
-
-                </li>
-                <li>
-                    <a href="<?= path('files') ?>"><i class="fa fa-diamond"></i> <span class="nav-label">Файли БД</span></a>
-                </li>
-                <li>
-                    <a href="<?= path('logs') ?>"><i class="fa fa-bar-chart-o"></i> <span class="nav-label">Логи</span></a>
-                </li>
-            </ul>
-
-        </div>
-    </nav>
-
+    <?php include 'layouts/menu.php';?>
     <div id="page-wrapper" class="gray-bg">
         <div class="row border-bottom">
-            <nav class="navbar navbar-static-top" role="navigation" style="margin-bottom: 0">
-                <div class="navbar-header">
-                    <a class="navbar-minimalize minimalize-styl-2 btn btn-primary " href="#"><i class="fa fa-bars"></i> </a>
-                </div>
-                <ul class="nav navbar-top-links navbar-right">
-                    <li>
-                        <span class="m-r-sm text-muted welcome-message">Welcome to AdminPage</span>
-                    </li>
-                    <li>
-                        <a href="<?= path('logoutpage') ?>">
-                            <i class="fa fa-sign-out"></i> Log out
-                        </a>
-                    </li>
-                </ul>
-
-            </nav>
+            <?php include 'layouts/header.php'?>
         </div>
         <div class="row wrapper border-bottom white-bg page-heading">
             <div class="col-lg-10">
@@ -97,16 +49,7 @@
                 </div>
             </div>
         </div>
-
-        <div class="footer">
-            <div class="pull-right">
-                <strong>All rights reserved</strong>
-            </div>
-            <div>
-                <strong>Designed and developed by </strong>Vladislav Bud &copy; 2018
-            </div>
-        </div>
-
+        <?php include 'layouts/footer.php'?>
     </div>
 </div>
 

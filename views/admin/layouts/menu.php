@@ -26,6 +26,9 @@
             <li>
                 <a href="<?= path('logs') ?>"><i class="fa fa-bar-chart-o"></i> <span class="nav-label">Логи</span></a>
             </li>
+            <li>
+                <a href="<?= path('changepass') ?>"><i class="fa fa-cogs"></i> <span class="nav-label">Змінити пароль</span></a>
+            </li>
         </ul>
 
     </div>

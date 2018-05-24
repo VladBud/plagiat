@@ -3,10 +3,10 @@
 namespace app\controllers;
 
 use app\Controller;
-use components\DocxConversion;
-use app\models\Shingle;
 use components\Logger;
 use components\Plagiat;
+use app\models\Shingle;
+use components\DocxConversion;
 
 class IndexController extends Controller
 {
@@ -22,7 +22,7 @@ class IndexController extends Controller
             $singleFile = Shingle::selectFile($file['text_id']);
             
             $file1 = new DocxConversion($singleFile);
-            $text1 = ($file1->convertToText());
+            $text1 = $file1->convertToText();
 
             $results = [];
 
@@ -33,10 +33,9 @@ class IndexController extends Controller
                 $result = new Plagiat($file2->convertToText(), $file1->convertToText());
                 $results[$files] = $result->get();
 
-                
                 $msg = $files . ' : ' . $results[$files] . '% співпадінь';
-                Logger::log($msg, true, false);
 
+                Logger::log($msg, true, false);
             }
             
             $finish = 100 - max($results);
@@ -45,11 +44,9 @@ class IndexController extends Controller
                 unlink($singleFile);
 
             return $this->render('main/index.php', ['finish' => $finish]);
-            
         }
 
         return $this->render('main/index.php');
-
     }
 
     private function uploadFile()
@@ -63,20 +60,23 @@ class IndexController extends Controller
         $uploadOk = 1;
         $fileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
 
-    // Check file size
+        // Check file size
         if ($_FILES["fileToUpload"]["size"] > 5000000) {
             $answer[] = "Вибачте, Ваш файл завеликий";
             $uploadOk = 0;
         }
-    // Allow certain file formats
+
+        // Allow certain file formats
         if($fileType != "docx" && $fileType != "pdf") {
             $answer[] =  "Дозволяється завантажувати тільки DOCX або PDF-файли";
             $uploadOk = 0;
         }
-    // Check if $uploadOk is set to 0 by an error
+
+        // Check if $uploadOk is set to 0 by an error
         if ($uploadOk == 0) {
             $answer[] = "Вибачте, Ваш файл не був завантажений";
-    // if everything is ok, try to upload file
+
+        // if everything is ok, try to upload file
         } else {
 
             if($text_id = Shingle::checkFileExist([

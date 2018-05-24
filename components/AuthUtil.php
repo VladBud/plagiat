@@ -1,18 +1,23 @@
 <?php
+
 namespace components;
+
 use Exception;
 use PDOException;
 use app\models\User;
 use app\models\Session;
+
 class AuthUtil
 {
     private $loginPath = '/login';
     private $defaultRedirect = '/';
     private $defaultSuccessRoute = 'adminpage';
+
     /**
      * @var array|boolean $user
      */
     private $user;
+
     public function __construct()
     {
         if(isset($_SESSION['user'])){
@@ -23,6 +28,7 @@ class AuthUtil
             $this->user = false;
         }
     }
+
     /**
      * Try to authenticate user or return false
      *
@@ -46,6 +52,7 @@ class AuthUtil
         }
         return false;
     }
+
     /**
      * Check if isset $this->user and validate hash
      *
@@ -63,6 +70,7 @@ class AuthUtil
                 die('Access denied (role)');
         return true;
     }
+
     /**
      * Public function to check if user is authenticated
      *
@@ -80,6 +88,7 @@ class AuthUtil
         }
         return true;
     }
+
     /**
      * Login user
      *
@@ -97,6 +106,7 @@ class AuthUtil
         if($userData)
             $this->auth($userData);
     }
+
     /**
      * Unset session and redirect to login page
      */
@@ -108,6 +118,7 @@ class AuthUtil
         } else
             redirect($this->loginPath);
     }
+
     /**
      * Register user
      *
@@ -132,6 +143,7 @@ class AuthUtil
         }
         return $response;
     }
+
     /**
      * Delete session info
      *
@@ -140,10 +152,10 @@ class AuthUtil
     private function unsetSession()
     {
         try {
-            if($_SESSION['user']){
+            if($_SESSION['user'] || $_COOKIE['user']){
                 if(isset($_COOKIE['user']) && $_COOKIE['user']){
                     setcookie('user', false, time() - 604800);
-                    unset($_COOKIE['user']);
+                    unset($_COOKIE['user'] );
                 }
                 Session::deleteSession($_SESSION['user']);
                 unset($_SESSION['user']);

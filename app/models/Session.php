@@ -1,7 +1,10 @@
 <?php
+
 namespace app\models;
+
 use app\Model;
 use components\Logger;
+
 class Session extends Model
 {
     /**
@@ -20,8 +23,10 @@ class Session extends Model
             if ($stmt->rowCount() == 1)
                 return true;
         }
+
         return false;
     }
+
     /**
      * @param $user
      * @return bool
@@ -42,6 +47,7 @@ class Session extends Model
         } else
             return false;
     }
+
     /**
      * @param $user
      * @return bool
@@ -57,6 +63,7 @@ class Session extends Model
         }
         return false;
     }
+
     /**
      * @param array $session_user
      * @return bool
@@ -84,6 +91,7 @@ class Session extends Model
         }
         return false;
     }
+
     /**
      * Clear old unvailable sessions
      */

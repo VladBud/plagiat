@@ -25,9 +25,9 @@ return [
         'defaults' => 'Security/logout',
         'path' => '/logout'
     ],
-    'parser' => [
-        'defaults' => 'Admin/parser',
-        'path' => '/admin/parse'
+    'changepass' => [
+        'defaults' => 'Admin/changePass',
+        'path' => '/admin/changepass'
     ],
     'files' => [
         'defaults' => 'Admin/files',

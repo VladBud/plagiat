@@ -2,12 +2,10 @@
 
 namespace app\models;
 
-
 use app\Model;
 
 class User extends Model
 {
-
     /**
      * @param string $username
      * @param string $password
@@ -64,4 +62,28 @@ class User extends Model
         return false;
     }
 
+    public static function getPassword($id)
+    {
+        $stmt = self::$db->prepare("SELECT password FROM users WHERE id = :id LIMIT 1");
+
+        if ($stmt->execute([
+            'id' => $id
+        ])) {
+            $password = $stmt->fetch();
+            $result = $password['password'];
+        }
+
+        return $result ?? false;
+
+    }
+
+    public static function setPassword($id, $password)
+    {
+        $stmt =self::$db->prepare("UPDATE users SET password = :password WHERE id = :id");
+
+        $stmt->execute([
+            'id' => $id,
+            'password' => $password
+            ]);
+    }
 }

@@ -2,10 +2,10 @@
 
 namespace app\controllers;
 
-use app\Controller;
-use app\models\Shingle;
-use components\Converter;
 use ZipArchive;
+use app\Controller;
+use app\models\User;
+use app\models\Shingle;
 
 class AdminController extends Controller
 {
@@ -42,26 +42,28 @@ class AdminController extends Controller
         $uploadOk = 1;
         $fileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
 
-// Check file size
+        // Check file size
         if ($_FILES["fileToUpload"]["size"] > 500000000) {
            $answer[$counter]['msg'] =  "Sorry, your file is too large.";
            $answer[$counter]['type'] =  "error";
             $counter++;
             $uploadOk = 0;
         }
-// Allow certain file formats
+
+        // Allow certain file formats
         if($fileType != "docx" && $fileType != "pdf" && $fileType != "zip") {
             $answer[$counter]['msg'] =  "Sorry, only DOCX, PDF or ZIP files is allowed.";
             $answer[$counter]['type'] =  "error";
             $counter++;
             $uploadOk = 0;
         }
-// Check if $uploadOk is set to 0 by an error
+
+        // Check if $uploadOk is set to 0 by an error
         if ($uploadOk == 0) {
             $answer[$counter]['msg'] = ("Sorry, your file was not uploaded.");
             $answer[$counter]['type'] =  "error";
 
-// if everything is ok, try to upload file
+        // if everything is ok, try to upload file
         } else {
 
             if($text_id = Shingle::checkFileExist([
@@ -83,7 +85,6 @@ class AdminController extends Controller
                 $answer[$counter]['msg'] =  "The file ". $_FILES["fileToUpload"]["name"]. " has been uploaded.";
                 $answer[$counter]['type'] =  "ok";
 
-//                dump($fileType);exit();
                 if( $fileType === "zip") {
                     $zip = new ZipArchive;
                     $res = $zip->open('uploads/'. $_FILES["fileToUpload"]["name"]);
@@ -98,17 +99,14 @@ class AdminController extends Controller
                                 if (in_array(end($explode), $this->formats))
                                 {
                                     $zip->extractTo('uploads/', array($zip->getNameIndex($i)));
-
                                     $explode2 = explode('/',$zip->getNameIndex($i));
                                     $basename = basename(end($explode2));
                                     array_pop($explode2);
-
                                     $name = '';
 
                                     foreach ($explode2 as $item) {
                                         $name .= $item . '/';
                                     }
-
                                     Shingle::addFinishedShingles([
                                         'title' =>  $zip->getNameIndex($i),
                                         'path' => 'uploads/'. $name  . $basename
@@ -118,32 +116,19 @@ class AdminController extends Controller
                         }
                         $zip->close();
 
-
-
                         unlink('uploads/'. $_FILES["fileToUpload"]["name"]);
 
                     } else {
                         die ('doh!');
                     }
                 }
-
-
             } else {
-                $answer[$counter]['msg'] =  "Sorry, there was an error uploading your file.";
+                $answer[$counter]['msg'] =  "Вибачте, сталась помилка при завантаженні Вашого файла.";
                 $answer[$counter]['type'] =  "error";
-                $counter++;
             }
         }
 
         return $answer;
-    }
-
-    public function parserAction()
-    {
-        $page = file_get_contents('http://ua.textreferat.com/referat-19679-1.html');
-        return $this->render('admin/parser.php', [
-            'page' => $page
-        ]);
     }
 
     public function filesAction()
@@ -156,13 +141,15 @@ class AdminController extends Controller
     public function logsAction()
     {
         $result = [];
+
         if(file_exists('logs/' . date("d-m-Y") . '.txt'))
         {
-           $logsForDay = file_get_contents('logs/' . date("d-m-Y") . '.txt');
+            $logsForDay = file_get_contents('logs/' . date("d-m-Y") . '.txt');
             $rows = explode("\n", $logsForDay);
 
             $counter = 0;
-            foreach ($rows as $row){
+
+            foreach ($rows as $row) {
                 if (empty($row[0]))
                     continue;
 
@@ -175,13 +162,48 @@ class AdminController extends Controller
                 $result[$counter]['date'] = $date;
                 $result[$counter]['title'] = $title;
                 $result[$counter]['coincidence'] = $coincidence;
-
                 $counter++;
             }
         }
 
         return $this->render('admin/logs.php', [
             'logs' => $result
+        ]);
+    }
+
+    public function changePassAction()
+    {
+        $answer = [];
+        $counter = 0;
+
+        if (isset($_POST['change_submit'])) {
+
+            $oldPass = md5($_POST['old_pass']);
+            $newPass = md5($_POST['new_pass']);
+            $ConfirmPass = md5($_POST['confirm_new_pass']);
+
+            if ($oldPass !== User::getPassword($_SESSION['user']['user_id'])) {
+                $answer[$counter]['msg'] = "Неправильний старий пароль! Пароль не змінено.";
+                $answer[$counter]['type'] = "error";
+            }
+
+            if ($newPass !== $ConfirmPass) {
+                $answer[$counter]['msg'] = "Новий пароль не співпадає! Пароль не змінено.";
+                $answer[$counter]['type'] = "error";
+            }
+
+            elseif ($oldPass == User::getPassword($_SESSION['user']['user_id']) && $newPass == $ConfirmPass) {
+
+                User::setPassword($_SESSION['user']['user_id'], $newPass);
+
+                $answer[$counter]['msg'] = "Пароль змінено.";
+                $answer[$counter]['type'] = "ok";
+            }
+
+        }
+
+        return $this->render('admin/changepass.php',[
+            'answer' => $answer
         ]);
     }
 }

@@ -8,7 +8,6 @@ class Shingle extends Model
 {
     public static function addShingles($text = false, $debug = false)
     {
-
         if ($text)
         {
 
@@ -29,7 +28,6 @@ class Shingle extends Model
     {
         if ($text)
         {
-
             $stmt = self::$db->prepare("INSERT INTO finished_files(title, path) VALUES(:title, :path) ");
             $stmt->execute([
                 'title' => $text['title'],
@@ -55,6 +53,7 @@ class Shingle extends Model
 
             return self::addShingles($text);
         }
+
         return false;
     }
 
@@ -63,8 +62,8 @@ class Shingle extends Model
             $stmt = self::$db->query('SELECT path FROM finished_files');
 
             $data = [];
-
             $count = 0;
+
             while ($row = $stmt->fetch())
             {
                 $data[$count] = $row['path'];
@@ -100,8 +99,8 @@ class Shingle extends Model
         $stmt = self::$db->query('SELECT * FROM finished_files ORDER BY id ASC ');
         
         $data = [];
-
         $count = 0;
+
         while ($row = $stmt->fetch())
         {
             $data[$count] = $row;

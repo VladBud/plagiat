@@ -42,10 +42,10 @@
 <br><br><br><br>
 <div class="middle-box text-center animated fadeInDown">
     <div style="margin-top: 100px;">
-        <div style="font-size: 20px;">Ласкаво просимо</div>
+        <div style="font-size: 30px;">Ласкаво просимо</div>
 
         <br>
-        <p class="text-center">
+        <p class="text-center" style="font-size: 16px;">
             Для того щоб перевірити Ваш файл, завантажте його і натисніть "Перевірити".
             Дозволяється завантажувати DOCX або PDF-файли
         </p>
